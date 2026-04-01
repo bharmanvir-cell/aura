@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useSpring, useMotionValue } from "motion/react";
 import { Menu, X, Paintbrush, Home as HomeIcon, Ruler, Shield, Sparkles } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 
@@ -51,12 +51,12 @@ function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-[100] transition-all duration-500 px-6 py-4",
+        "fixed top-0 left-0 right-0 z-[100] transition-[background-color,padding,backdrop-filter] duration-500 px-6 py-4",
         isScrolled ? "glass py-3" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" aria-label="Aura Plasters Home" className="flex items-center gap-2 group">
           <div className="w-10 h-10 rounded-full border border-gold flex items-center justify-center group-hover:bg-gold transition-colors duration-500">
             <span className="font-serif text-xl group-hover:text-obsidian transition-colors">A</span>
           </div>
@@ -69,6 +69,7 @@ function Navbar() {
             <Link
               key={link.name}
               to={link.path}
+              aria-label={`Go to ${link.name} page`}
               className={cn(
                 "font-sans text-xs uppercase tracking-[0.2em] transition-colors relative group",
                 location.pathname === link.path ? "text-gold" : "text-bone/70 hover:text-bone"
@@ -78,13 +79,21 @@ function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-gold via-terracotta to-emerald group-hover:w-full transition-all duration-500" />
             </Link>
           ))}
-          <Link to="/#contact" className="px-6 py-2 border border-gold/30 hover:border-emerald text-xs uppercase tracking-widest transition-all hover:bg-emerald/10 hover:text-emerald">
+          <Link 
+            to="/#contact" 
+            aria-label="Book a free consultation"
+            className="px-6 py-2 border border-gold/30 hover:border-emerald text-xs uppercase tracking-widest transition-all hover:bg-emerald/10 hover:text-emerald"
+          >
             Consultation
           </Link>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-gold" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button 
+          className="md:hidden text-gold" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+        >
           {isMobileMenuOpen ? <X /> : <Menu />}
         </button>
       </div>
@@ -116,21 +125,29 @@ function Navbar() {
 }
 
 function CursorGlow() {
-  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 25, stiffness: 150 };
+  const x = useSpring(mouseX, springConfig);
+  const y = useSpring(mouseY, springConfig);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setPos({ x: e.clientX, y: e.clientY });
+      mouseX.set(e.clientX - 192);
+      mouseY.set(e.clientY - 192);
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [mouseX, mouseY]);
 
   return (
-    <div
-      className="cursor-glow"
+    <motion.div
+      className="cursor-glow pointer-events-none"
       style={{
-        transform: `translate(${pos.x - 192}px, ${pos.y - 192}px)`,
+        x,
+        y,
+        willChange: "transform",
       }}
     />
   );

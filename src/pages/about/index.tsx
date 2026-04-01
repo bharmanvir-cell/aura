@@ -30,6 +30,26 @@ const reviews = [
   }
 ];
 
+const artisans = [
+  {
+    name: "Julian Rossi",
+    role: "Master Artisan",
+    bio: "With over 20 years of experience in traditional Italian techniques, Julian leads our creative direction.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    name: "Sofia Moretti",
+    role: "Pigment Specialist",
+    bio: "Sofia specializes in custom mineral color matching, ensuring every project has a unique chromatic signature.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    name: "Liam O'Connor",
+    role: "Texture Lead",
+    bio: "Liam's expertise in heavy-textured finishes like Travertino brings a raw, geological beauty to modern spaces.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400"
+  }
+];
 
 export default function About() {
   return (
@@ -92,8 +112,11 @@ export default function About() {
           </div>
           <div className="relative aspect-square rounded-3xl overflow-hidden glass border-gold/20">
             <img 
-              src="/assets/IMG_5566.webp" 
+              src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1000" 
+              srcSet="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=500 500w, https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1000 1000w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               alt="Celestial Hall Project"
+              loading="lazy"
               className="w-full h-full object-cover opacity-80"
               referrerPolicy="no-referrer"
             />
@@ -102,7 +125,47 @@ export default function About() {
         </div>
       </section>
 
-     
+      {/* The Artisans */}
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="text-center space-y-4">
+            <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-gold block">The Team</span>
+            <h2 className="text-5xl font-serif italic text-bone">Master Hands.</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {artisans.map((artisan, i) => (
+              <motion.div
+                key={artisan.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="group space-y-6"
+              >
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden glass border-white/5 relative">
+                  <img 
+                    src={artisan.image} 
+                    srcSet={`${artisan.image.replace('w=400', 'w=200')} 200w, ${artisan.image} 400w`}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    alt={artisan.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-60" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-serif text-2xl italic text-bone">{artisan.name}</h3>
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-gold">{artisan.role}</p>
+                  <p className="text-xs text-bone/40 leading-relaxed">{artisan.bio}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Reviews Grid */}
       <section className="py-24 px-6 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-7xl mx-auto space-y-16">
@@ -138,6 +201,7 @@ export default function About() {
           </div>
         </div>
       </section>
+
       <LeadForm />
     </div>
   );

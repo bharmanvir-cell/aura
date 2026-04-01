@@ -24,7 +24,12 @@ function PlasterSphere() {
 export default function MaterialViewer() {
   return (
     <div className="w-full h-full min-h-[400px] cursor-grab active:cursor-grabbing">
-      <Canvas camera={{ position: [0, 0, 3], fov: 45 }}>
+      <Canvas 
+        camera={{ position: [0, 0, 3], fov: 45 }}
+        dpr={[1, 2]} // Limit resolution on high-DPI screens
+        performance={{ min: 0.5 }} // Allow scaling down if performance drops
+        gl={{ antialias: true, alpha: true }}
+      >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />

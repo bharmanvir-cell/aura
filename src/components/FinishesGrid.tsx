@@ -6,35 +6,35 @@ const FINISHES = [
   {
     title: "Verde Antique",
     desc: "Deep mineral green with golden veins. A majestic statement for sophisticated interiors.",
-    image: "/assets/IMG_5563.webp",
+    image: "https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=800",
     tags: ["Deep Green", "Gold Veins"],
     color: "emerald"
   },
   {
     title: "Classic Marmorino",
     desc: "Warm, hand-polished earth tones that capture the essence of Italian heritage.",
-    image: "/assets/IMG_5562.webp",
+    image: "https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?auto=format&fit=crop&q=80&w=800",
     tags: ["Warm", "Polished"],
     color: "terracotta"
   },
   {
     title: "Lapis & Gold",
     desc: "A celestial blend of deep cobalt and hand-applied gold leaf. Pure artisanal luxury.",
-    image: "/assets/IMG_5574.webp",
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800",
     tags: ["Cobalt", "Gold Leaf"],
     color: "lapis"
   },
   {
     title: "Mineral Grey",
     desc: "Subtle, multi-tonal grey with a silk-like sheen. Perfect for modern minimalist spaces.",
-    image: "/assets/IMG_5579.webp",
+    image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=800",
     tags: ["Grey", "Silk"],
     color: "rose"
   },
   {
     title: "Obsidian Marble",
     desc: "Deep, reflective black with striking white veins. The height of contemporary drama.",
-    image: "/assets/IMG_5576.webp",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800",
     tags: ["Black", "Reflective"],
     color: "gold"
   }
@@ -58,7 +58,11 @@ export default function FinishesGrid() {
               We've expanded our palette with rare mineral pigments, bringing a new dimension of color to the traditional art of Venetian Plaster.
             </p>
           </div>
-          <Link to="/#contact" className="group flex items-center gap-4 text-gold font-sans text-xs uppercase tracking-widest hover:text-bone transition-colors">
+          <Link 
+            to="/#contact" 
+            aria-label="View all material specifications"
+            className="group flex items-center gap-4 text-gold font-sans text-xs uppercase tracking-widest hover:text-bone transition-colors"
+          >
             View All Specs <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Link>
         </div>
@@ -75,7 +79,10 @@ export default function FinishesGrid() {
             >
               <img
                 src={f.image}
+                srcSet={`${f.image.replace('w=800', 'w=400')} 400w, ${f.image} 800w`}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 alt={f.title}
+                loading="lazy"
                 className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000"
                 referrerPolicy="no-referrer"
               />

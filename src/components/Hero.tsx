@@ -97,10 +97,14 @@ export default function Hero() {
         className="absolute inset-0 opacity-30 pointer-events-none"
       >
         <img
-          src="/assets/IMG_5581.webp"
-          alt="Verde Antique Texture"
+          src="https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=2000"
+          srcSet="https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=2000 2000w"
+          sizes="100vw"
+          alt="Verde Antique Venetian Plaster Texture"
           className="w-full h-full object-cover scale-110"
           referrerPolicy="no-referrer"
+          fetchPriority="high"
+          loading="eager"
         />
       </motion.div>
 
@@ -128,10 +132,18 @@ export default function Hero() {
             Master Venetian Plaster and vibrant mineral finishes for Toronto's most exclusive residences.
           </p>
           <div className="flex flex-wrap gap-8">
-            <Link to="/#finishes" className="group flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-gold to-terracotta text-obsidian font-sans text-xs uppercase tracking-[0.3em] font-bold hover:from-emerald hover:to-lapis hover:text-bone transition-all duration-700">
+            <Link 
+              to="/#finishes" 
+              aria-label="View our gallery of finishes"
+              className="group flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-gold to-terracotta text-obsidian font-sans text-xs uppercase tracking-[0.3em] font-bold hover:from-emerald hover:to-lapis hover:text-bone transition-all duration-700"
+            >
               View Gallery <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
             </Link>
-            <Link to="/#contact" className="flex items-center gap-4 px-8 py-4 border border-lapis/30 text-lapis font-sans text-xs uppercase tracking-[0.3em] hover:border-lapis hover:bg-lapis/5 transition-all duration-500">
+            <Link 
+              to="/#contact" 
+              aria-label="Request a physical swatch"
+              className="flex items-center gap-4 px-8 py-4 border border-lapis/30 text-lapis font-sans text-xs uppercase tracking-[0.3em] hover:border-lapis hover:bg-lapis/5 transition-all duration-500"
+            >
               Request Swatch
             </Link>
           </div>

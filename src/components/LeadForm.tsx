@@ -72,6 +72,7 @@ export default function LeadForm() {
         <img 
           src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=2000" 
           alt="Mineral Texture"
+          loading="lazy"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
@@ -118,10 +119,11 @@ export default function LeadForm() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="font-mono text-[10px] uppercase tracking-widest text-gold/70">Full Name</label>
+                <label htmlFor="full-name" className="font-mono text-[10px] uppercase tracking-widest text-gold/70">Full Name</label>
                 <div className="relative">
                   <User className="absolute left-4 top-1/2 -translate-y-1/2 text-bone/30" size={16} />
                   <input 
+                    id="full-name"
                     type="text" 
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -135,10 +137,11 @@ export default function LeadForm() {
                 {errors.name && <p className="text-[8px] text-rose uppercase tracking-widest">{errors.name}</p>}
               </div>
               <div className="space-y-2">
-                <label className="font-mono text-[10px] uppercase tracking-widest text-gold/70">Email Address</label>
+                <label htmlFor="email-address" className="font-mono text-[10px] uppercase tracking-widest text-gold/70">Email Address</label>
                 <div className="relative">
                   <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-bone/30" size={16} />
                   <input 
+                    id="email-address"
                     type="text" 
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -154,10 +157,11 @@ export default function LeadForm() {
             </div>
 
             <div className="space-y-2">
-              <label className="font-mono text-[10px] uppercase tracking-widest text-gold/70">Phone Number</label>
+              <label htmlFor="phone-number" className="font-mono text-[10px] uppercase tracking-widest text-gold/70">Phone Number</label>
               <div className="relative">
                 <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-bone/30" size={16} />
                 <input 
+                  id="phone-number"
                   type="text" 
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -172,10 +176,11 @@ export default function LeadForm() {
             </div>
 
             <div className="space-y-2">
-              <label className="font-mono text-[10px] uppercase tracking-widest text-gold/70">Project Details</label>
+              <label htmlFor="project-details" className="font-mono text-[10px] uppercase tracking-widest text-gold/70">Project Details</label>
               <div className="relative">
                 <MessageSquare className="absolute left-4 top-4 text-bone/30" size={16} />
                 <textarea 
+                  id="project-details"
                   rows={4}
                   value={formData.details}
                   onChange={(e) => setFormData({ ...formData, details: e.target.value })}

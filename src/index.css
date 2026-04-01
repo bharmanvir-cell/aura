@@ -37,7 +37,7 @@
   }
 
   .cursor-glow {
-    @apply fixed pointer-events-none w-96 h-96 rounded-full opacity-30 blur-[100px] z-50 transition-transform duration-75 ease-out;
+    @apply fixed pointer-events-none w-96 h-96 rounded-full opacity-30 blur-[100px] z-50;
     background: radial-gradient(circle, var(--color-gold) 0%, var(--color-emerald) 40%, transparent 70%);
   }
 
