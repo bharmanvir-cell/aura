@@ -5,18 +5,18 @@ import { cn } from "@/src/lib/utils";
 import SEO from "../../components/SEO";
 
 const PROJECTS = [
-  { id: 1, title: "Bridle Path Estate", category: "Residential", finish: "Polished Marmorino", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000" },
-  { id: 2, title: "Yorkville Penthouse", category: "Residential", finish: "Stucco Veneziano", image: "https://images.unsplash.com/photo-1600607687940-4e2a09695d51?auto=format&fit=crop&q=80&w=1000" },
-  { id: 3, title: "Forest Hill Manor", category: "Residential", finish: "Gold Leaf Accents", image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=1000" },
-  { id: 4, title: "The Ritz-Carlton Suite", category: "Commercial", finish: "Grassello", image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1000" },
-  { id: 5, title: "Oakville Waterfront", category: "Residential", finish: "Microcement", image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1000" },
-  { id: 6, title: "King St. Design Studio", category: "Commercial", finish: "Industrial Concrete", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000" },
-  { id: 7, title: "The Arched Hallway", category: "Residential", finish: "Classic Venetian", image: "https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&q=80&w=1000" },
-  { id: 8, title: "Modernist TV Suite", category: "Residential", finish: "Deep Obsidian Marble", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1000" },
-  { id: 9, title: "Lapis & Gold Mural", category: "Gold Leaf", finish: "Mineral Pigment Mural", image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=1000" },
-  { id: 10, title: "Verde Antique Study", category: "Residential", finish: "Green Marble Texture", image: "https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=1000" },
-  { id: 11, title: "Celestial Hall", category: "Gold Leaf", finish: "Copper & Cobalt Mural", image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1000" },
-  { id: 12, title: "Copper Lounge", category: "Residential", finish: "Oxidized Earth Marble", image: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&q=80&w=1000" },
+   { id: 1, title: "Bridle Path Estate", category: "Residential", finish: "Polished Marmorino", image: "/assets/IMG_5562.webp" },
+  { id: 2, title: "Yorkville Penthouse", category: "Residential", finish: "Stucco Veneziano", image: "/assets/IMG_5563.webp" },
+  { id: 3, title: "Forest Hill Manor", category: "Residential", finish: "Gold Leaf Accents", image: "/assets/IMG_5567.webp" },
+  { id: 4, title: "The Ritz-Carlton Suite", category: "Commercial", finish: "Grassello", image: "/assets/IMG_5566.webp" },
+  { id: 5, title: "Oakville Waterfront", category: "Residential", finish: "Microcement", image: "/assets/IMG_5581.webp" },
+  { id: 6, title: "King St. Design Studio", category: "Commercial", finish: "Industrial Concrete", image: "/assets/IMG_5572.webp" },
+  { id: 7, title: "The Arched Hallway", category: "Residential", finish: "Classic Venetian", image: "/assets/IMG_5576.webp" },
+  { id: 8, title: "Modernist TV Suite", category: "Residential", finish: "Deep Obsidian Marble", image: "/assets/IMG_5573.webp" },
+  { id: 9, title: "Lapis & Gold Mural", category: "Gold Leaf", finish: "Mineral Pigment Mural", image: "/assets/IMG_5574.webp" },
+  { id: 10, title: "Verde Antique Study", category: "Residential", finish: "Green Marble Texture", image: "/assets/IMG_5575.webp" },
+  { id: 11, title: "Celestial Hall", category: "Gold Leaf", finish: "Copper & Cobalt Mural", image: "/assets/IMG_5580.webp" },
+  { id: 12, title: "Copper Lounge", category: "Residential", finish: "Oxidized Earth Marble", image: "/assets/IMG_5575.webp" },
 ];
 
 const CATEGORIES = ["All", "Residential", "Commercial", "Gold Leaf"];
