@@ -30,26 +30,7 @@ const reviews = [
   }
 ];
 
-const artisans = [
-  {
-    name: "Julian Rossi",
-    role: "Master Artisan",
-    bio: "With over 20 years of experience in traditional Italian techniques, Julian leads our creative direction.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
-  },
-  {
-    name: "Sofia Moretti",
-    role: "Pigment Specialist",
-    bio: "Sofia specializes in custom mineral color matching, ensuring every project has a unique chromatic signature.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400"
-  },
-  {
-    name: "Liam O'Connor",
-    role: "Texture Lead",
-    bio: "Liam's expertise in heavy-textured finishes like Travertino brings a raw, geological beauty to modern spaces.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400"
-  }
-];
+
 
 export default function About() {
   return (
@@ -112,8 +93,7 @@ export default function About() {
           </div>
           <div className="relative aspect-square rounded-3xl overflow-hidden glass border-gold/20">
             <img 
-              src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1000&fm=webp" 
-              srcSet="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=500&fm=webp 500w, https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1000&fm=webp 1000w"
+              src="/assets/IMG_5566.webp"
               sizes="(max-width: 768px) 100vw, 50vw"
               alt="Celestial Hall Project"
               loading="lazy"
