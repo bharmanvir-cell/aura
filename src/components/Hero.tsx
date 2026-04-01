@@ -98,9 +98,7 @@ export default function Hero() {
         className="absolute inset-0 opacity-30 pointer-events-none"
       >
         <img
-          src="https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=2000&fm=webp"
-          srcSet="https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=800&fm=webp 800w, https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=1200&fm=webp 1200w, https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=2000&fm=webp 2000w"
-          sizes="100vw"
+          src="/assets/IMG_5581.webp"
           alt="Verde Antique Venetian Plaster Texture"
           className="w-full h-full object-cover scale-110"
           referrerPolicy="no-referrer"
