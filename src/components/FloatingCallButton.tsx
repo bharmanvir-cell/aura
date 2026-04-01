@@ -5,7 +5,7 @@ export default function FloatingCallButton() {
   return (
     <div className="fixed bottom-8 right-8 z-[100]">
       <motion.a
-        href="tel:+14165550192"
+        href="tel:+14373670727"
         aria-label="Call Aura Plasters"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
