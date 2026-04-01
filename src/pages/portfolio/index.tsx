@@ -5,7 +5,7 @@ import { cn } from "@/src/lib/utils";
 import SEO from "../../components/SEO";
 
 const PROJECTS = [
-   { id: 1, title: "Bridle Path Estate", category: "Residential", finish: "Polished Marmorino", image: "/assets/IMG_5562.webp" },
+  { id: 1, title: "Bridle Path Estate", category: "Residential", finish: "Polished Marmorino", image: "/assets/IMG_5562.webp" },
   { id: 2, title: "Yorkville Penthouse", category: "Residential", finish: "Stucco Veneziano", image: "/assets/IMG_5563.webp" },
   { id: 3, title: "Forest Hill Manor", category: "Residential", finish: "Gold Leaf Accents", image: "/assets/IMG_5567.webp" },
   { id: 4, title: "The Ritz-Carlton Suite", category: "Commercial", finish: "Grassello", image: "/assets/IMG_5566.webp" },
@@ -65,7 +65,6 @@ export default function Portfolio() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
                 onClick={() => setFilter(cat)}
-                aria-label={`Filter projects by ${cat}`}
                 className={cn(
                   "px-6 py-2 rounded-full font-sans text-[10px] uppercase tracking-widest transition-all",
                   filter === cat 
@@ -99,11 +98,8 @@ export default function Portfolio() {
                 className="group relative aspect-[4/5] overflow-hidden rounded-2xl glass border-white/5"
               >
                 <img
-                  src={`${project.image}&fm=webp`}
-                  srcSet={`${project.image.replace('w=1000', 'w=500&fm=webp')} 500w, ${project.image}&fm=webp 1000w`}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  src={project.image}
                   alt={project.title}
-                  loading="lazy"
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000"
                   referrerPolicy="no-referrer"
                 />
@@ -116,11 +112,7 @@ export default function Portfolio() {
                       <h3 className="font-serif text-2xl italic mb-1 group-hover:text-gold transition-colors">{project.title}</h3>
                       <p className="text-[10px] text-bone/50 uppercase tracking-widest">{project.finish}</p>
                     </div>
-                    <Link 
-                      to="/#contact" 
-                      aria-label={`Inquire about ${project.title}`}
-                      className="w-10 h-10 rounded-full glass flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-500"
-                    >
+                    <Link to="/#contact" className="w-10 h-10 rounded-full glass flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-500">
                       <ArrowUpRight size={18} />
                     </Link>
                   </div>
@@ -181,11 +173,7 @@ export default function Portfolio() {
           <p className="font-sans text-bone/50 text-xs uppercase tracking-widest mb-12 max-w-md mx-auto leading-relaxed">
             From Forest Hill mansions to Yorkville boutiques, we bring the art of the wall to Toronto's most prestigious spaces.
           </p>
-          <Link 
-            to="/#contact" 
-            aria-label="Start your transformation project"
-            className="inline-block px-12 py-5 bg-gold text-obsidian font-sans text-xs uppercase tracking-[0.4em] font-bold hover:bg-bone transition-all duration-500"
-          >
+          <Link to="/#contact" className="inline-block px-12 py-5 bg-gold text-obsidian font-sans text-xs uppercase tracking-[0.4em] font-bold hover:bg-bone transition-all duration-500">
             Start Your Transformation
           </Link>
         </motion.div>
