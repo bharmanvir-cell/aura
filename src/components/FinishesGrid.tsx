@@ -6,7 +6,7 @@ const FINISHES = [
   {
     title: "Verde Antique",
     desc: "Deep mineral green with golden veins. A majestic statement for sophisticated interiors.",
-    image: "https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=800",
+    image: "/assets/IMG_5563.webp",
     tags: ["Deep Green", "Gold Veins"],
     color: "emerald"
   },
