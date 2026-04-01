@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef, Suspense } from "react";
+import { useState, useEffect, useRef, Suspense, lazy } from "react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { ArrowRight, MousePointer2 } from "lucide-react";
 import { cn } from "@/src/lib/utils";
-import MaterialViewer from "./MaterialViewer";
+
+const MaterialViewer = lazy(() => import("./MaterialViewer"));
 
 import { Link } from "react-router-dom";
 
@@ -97,8 +98,8 @@ export default function Hero() {
         className="absolute inset-0 opacity-30 pointer-events-none"
       >
         <img
-          src="https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=2000"
-          srcSet="https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=2000 2000w"
+          src="https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=2000&fm=webp"
+          srcSet="https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=800&fm=webp 800w, https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=1200&fm=webp 1200w, https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=2000&fm=webp 2000w"
           sizes="100vw"
           alt="Verde Antique Venetian Plaster Texture"
           className="w-full h-full object-cover scale-110"
@@ -157,7 +158,9 @@ export default function Hero() {
           className="relative hidden lg:block h-[600px] w-full"
         >
           <div className="w-full h-full glass rounded-3xl overflow-hidden relative group">
-            <MaterialViewer />
+            <Suspense fallback={<div className="w-full h-full bg-white/5 animate-pulse" />}>
+              <MaterialViewer />
+            </Suspense>
             
             <div className="absolute bottom-8 left-8 right-8 pointer-events-none">
               <span className="font-mono text-[10px] text-gold uppercase tracking-widest block mb-2">Spec: 001-V</span>

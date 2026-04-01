@@ -79,7 +79,7 @@ export default function FinishesGrid() {
             >
               <img
                 src={f.image}
-                srcSet={`${f.image.replace('w=800', 'w=400')} 400w, ${f.image} 800w`}
+                srcSet={`${f.image.replace('w=800', 'w=400&fm=webp')} 400w, ${f.image.replace('w=800', 'w=800&fm=webp')} 800w`}
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 alt={f.title}
                 loading="lazy"

@@ -99,8 +99,8 @@ export default function Portfolio() {
                 className="group relative aspect-[4/5] overflow-hidden rounded-2xl glass border-white/5"
               >
                 <img
-                  src={project.image}
-                  srcSet={`${project.image.replace('w=1000', 'w=500')} 500w, ${project.image} 1000w`}
+                  src={`${project.image}&fm=webp`}
+                  srcSet={`${project.image.replace('w=1000', 'w=500&fm=webp')} 500w, ${project.image}&fm=webp 1000w`}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   alt={project.title}
                   loading="lazy"

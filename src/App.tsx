@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useSpring, useMotionValue } from "motion/react";
 import { Menu, X, Paintbrush, Home as HomeIcon, Ruler, Shield, Sparkles } from "lucide-react";
@@ -6,12 +6,12 @@ import { cn } from "@/src/lib/utils";
 
 import PageTransition from "./components/PageTransition";
 
-// Pages
-import Home from "./pages/home";
-import Portfolio from "./pages/portfolio";
-import About from "./pages/about";
-import Success from "./pages/success";
-import NotFound from "./pages/not-found";
+// Pages - Lazy Loaded
+const Home = lazy(() => import("./pages/home"));
+const Portfolio = lazy(() => import("./pages/portfolio"));
+const About = lazy(() => import("./pages/about"));
+const Success = lazy(() => import("./pages/success"));
+const NotFound = lazy(() => import("./pages/not-found"));
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -163,13 +163,15 @@ function AppContent() {
       <Navbar />
       <main className="relative">
         <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-            <Route path="/portfolio" element={<PageTransition><Portfolio /></PageTransition>} />
-            <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-            <Route path="/success" element={<PageTransition><Success /></PageTransition>} />
-            <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
-          </Routes>
+          <Suspense fallback={<div className="min-h-screen bg-obsidian" />}>
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+              <Route path="/portfolio" element={<PageTransition><Portfolio /></PageTransition>} />
+              <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+              <Route path="/success" element={<PageTransition><Success /></PageTransition>} />
+              <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+            </Routes>
+          </Suspense>
         </AnimatePresence>
       </main>
     </>

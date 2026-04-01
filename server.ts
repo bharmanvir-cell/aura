@@ -29,7 +29,14 @@ async function startServer() {
   } else {
     // Production: serve static files from dist
     const distPath = path.join(process.cwd(), "dist");
-    app.use(express.static(distPath));
+    
+    // Serve static files with long-term caching
+    app.use(express.static(distPath, {
+      maxAge: '1y',
+      immutable: true,
+      index: false // Don't serve index.html from here, we handle it below
+    }));
+
     app.get("*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });

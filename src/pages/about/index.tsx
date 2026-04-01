@@ -112,8 +112,8 @@ export default function About() {
           </div>
           <div className="relative aspect-square rounded-3xl overflow-hidden glass border-gold/20">
             <img 
-              src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1000" 
-              srcSet="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=500 500w, https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1000 1000w"
+              src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1000&fm=webp" 
+              srcSet="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=500&fm=webp 500w, https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1000&fm=webp 1000w"
               sizes="(max-width: 768px) 100vw, 50vw"
               alt="Celestial Hall Project"
               loading="lazy"
@@ -145,8 +145,8 @@ export default function About() {
               >
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden glass border-white/5 relative">
                   <img 
-                    src={artisan.image} 
-                    srcSet={`${artisan.image.replace('w=400', 'w=200')} 200w, ${artisan.image} 400w`}
+                    src={`${artisan.image}&fm=webp`} 
+                    srcSet={`${artisan.image.replace('w=400', 'w=200&fm=webp')} 200w, ${artisan.image}&fm=webp 400w`}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     alt={artisan.name}
                     loading="lazy"
