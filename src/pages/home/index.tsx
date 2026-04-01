@@ -109,7 +109,7 @@ export default function Home() {
           </div>
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden glass border-white/10">
             <img 
-              src="public/assets/IMG_5562.webp" 
+              src="/assets/IMG_5562.webp" 
               alt="Artisan Studio"
               className="w-full h-full object-cover opacity-70"
               referrerPolicy="no-referrer"
