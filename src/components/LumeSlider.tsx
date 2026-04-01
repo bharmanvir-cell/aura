@@ -47,7 +47,7 @@ export default function LumeSlider() {
           {/* Before: Raw Drywall */}
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1589939705384-5185138a047a?auto=format&fit=crop&q=80&w=2000" 
+              src="/assets/img_666.webp" 
               alt="Raw Drywall" 
               className="w-full h-full object-cover grayscale opacity-50"
               referrerPolicy="no-referrer"
@@ -64,7 +64,7 @@ export default function LumeSlider() {
             style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&q=80&w=2000" 
+              src="/assets/IMG_5566.webp" 
               alt="Polished Venetian Plaster" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
