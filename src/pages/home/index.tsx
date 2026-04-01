@@ -247,8 +247,8 @@ export default function Home() {
           <div className="space-y-8">
             <h4 className="font-mono text-[10px] uppercase tracking-[0.5em] text-gold">Contact</h4>
             <ul className="space-y-4 text-xs uppercase tracking-widest text-bone/70">
-              <li>Studio: Toronto</li>
-              <li>Phone: +1 (416) 555-0192</li>
+              <li>Studio: Greater Toronto Area</li>
+              <li>Phone: +1 (437) 367-0727</li>
               <li>Email: studio@auraplasters.ca</li>
             </ul>
           </div>
