@@ -3,38 +3,38 @@ import { Search, MapPin, Star, ArrowUpRight } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 
 const FINISHES = [
-  {
+ {
     title: "Verde Antique",
     desc: "Deep mineral green with golden veins. A majestic statement for sophisticated interiors.",
-    image: "https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=800",
+    image: "/assets/IMG_5563.webp",
     tags: ["Deep Green", "Gold Veins"],
     color: "emerald"
   },
   {
     title: "Classic Marmorino",
     desc: "Warm, hand-polished earth tones that capture the essence of Italian heritage.",
-    image: "https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?auto=format&fit=crop&q=80&w=800",
+    image: "/assets/IMG_5562.webp",
     tags: ["Warm", "Polished"],
     color: "terracotta"
   },
   {
     title: "Lapis & Gold",
     desc: "A celestial blend of deep cobalt and hand-applied gold leaf. Pure artisanal luxury.",
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800",
+    image: "/assets/IMG_5574.webp",
     tags: ["Cobalt", "Gold Leaf"],
     color: "lapis"
   },
   {
     title: "Mineral Grey",
     desc: "Subtle, multi-tonal grey with a silk-like sheen. Perfect for modern minimalist spaces.",
-    image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=800",
+    image: "/assets/IMG_5579.webp",
     tags: ["Grey", "Silk"],
     color: "rose"
   },
   {
     title: "Obsidian Marble",
     desc: "Deep, reflective black with striking white veins. The height of contemporary drama.",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800",
+    image: "/assets/IMG_5576.webp",
     tags: ["Black", "Reflective"],
     color: "gold"
   }
