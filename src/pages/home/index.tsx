@@ -109,7 +109,7 @@ export default function Home() {
           </div>
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden glass border-white/10">
             <img 
-              src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&q=80&w=1000" 
+              src="/assets/IMG_5562.webp" 
               alt="Artisan Studio"
               className="w-full h-full object-cover opacity-70"
               referrerPolicy="no-referrer"
@@ -135,12 +135,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { title: "Modernist TV Suite", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1000", span: "md:col-span-2" },
-              { title: "Lapis & Gold Mural", image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=1000", span: "md:col-span-1" },
-              { title: "Verde Antique Study", image: "https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4?auto=format&fit=crop&q=80&w=1000", span: "md:col-span-1" },
-              { title: "Celestial Hall", image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&q=80&w=1000", span: "md:col-span-1" },
-              { title: "Copper Lounge", image: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&q=80&w=1000", span: "md:col-span-1" },
-              { title: "Yorkville Penthouse", image: "https://images.unsplash.com/photo-1600607687940-4e2a09695d51?auto=format&fit=crop&q=80&w=1000", span: "md:col-span-2" },
+              { title: "Modernist TV Suite", image: "/assets/IMG_5572.webp", span: "md:col-span-2" },
+              { title: "Lapis & Gold Mural", image: "/assets/IMG_5574.webp" },
+              { title: "Verde Antique Study", image: "/assets/IMG_5567.webp", span: "md:col-span-1" },
+              { title: "Celestial Hall", image: "/assets/IMG_5562.webp", span: "md:col-span-1" },
+              { title: "Copper Lounge", image: "/assets/IMG_5563.webp", span: "md:col-span-1" },
+              { title: "Yorkville Penthouse", image: "/assets/IMG_5566.webp", span: "md:col-span-2" },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
@@ -234,9 +234,6 @@ export default function Home() {
               Artisanal wall finishes for the modern era. Hand-applied in Toronto, Ontario.
             </p>
             <div className="flex gap-4">
-              {["Instagram", "Pinterest", "LinkedIn"].map(s => (
-                <a key={s} href="#" className="text-[10px] uppercase tracking-widest text-gold hover:text-bone transition-colors">{s}</a>
-              ))}
             </div>
           </div>
           <div className="space-y-8">
@@ -250,8 +247,8 @@ export default function Home() {
           <div className="space-y-8">
             <h4 className="font-mono text-[10px] uppercase tracking-[0.5em] text-gold">Contact</h4>
             <ul className="space-y-4 text-xs uppercase tracking-widest text-bone/70">
-              <li>Studio: 1200 Bay St, Toronto</li>
-              <li>Phone: +1 (416) 555-0192</li>
+              <li>Studio: Greater Toronto Area</li>
+              <li>Phone: +1 (437) 367-0727</li>
               <li>Email: studio@auraplasters.ca</li>
             </ul>
           </div>
