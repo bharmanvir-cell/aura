@@ -143,3 +143,67 @@ export default function About() {
     </div>
   );
 }
+{/* Footer */}
+      <footer className="py-24 px-6 border-t border-white/5">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="space-y-8">
+            <h3 className="font-serif text-3xl italic text-gradient">Aura Plasters</h3>
+            <p className="text-xs text-bone/50 uppercase tracking-widest leading-relaxed">
+              Artisanal wall finishes for the modern era. Hand-applied in Greater Toronto Area, Ontario.
+            </p>
+            <div className="flex gap-4">
+            </div>
+          </div>
+          <div className="space-y-8">
+            <h4 className="font-mono text-[10px] uppercase tracking-[0.5em] text-gold">Studio</h4>
+            <ul className="space-y-4 text-xs uppercase tracking-widest text-bone/70">
+              <li><Link to="/about" className="hover:text-gold transition-colors">Our Story</Link></li>
+              <li><Link to="/portfolio" className="hover:text-gold transition-colors">Portfolio</Link></li>
+              <li><Link to="/#finishes" className="hover:text-gold transition-colors">Finishes</Link></li>
+            </ul>
+          </div>
+          <div className="space-y-8">
+            <h4 className="font-mono text-[10px] uppercase tracking-[0.5em] text-gold">Contact</h4>
+            <ul className="space-y-4 text-xs uppercase tracking-widest text-bone/70">
+              <li>Studio: Greater Toronto Area</li>
+              <li>Phone: +1 (437) 367-0727</li>
+              <li>Email: studio@auraplasters.ca</li>
+            </ul>
+          </div>
+          <div className="space-y-8">
+            <h4 className="font-mono text-[10px] uppercase tracking-[0.5em] text-gold">Newsletter</h4>
+            <form onSubmit={handleSubscribe} className="relative">
+              <input 
+                type="text" 
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (error) setError("");
+                }}
+                placeholder={subscribed ? "THANK YOU" : "EMAIL ADDRESS"} 
+                disabled={subscribed}
+                className={cn(
+                  "w-full bg-transparent border-b py-4 text-[10px] uppercase tracking-widest focus:outline-none transition-colors",
+                  subscribed ? "text-emerald border-emerald" : error ? "border-rose text-rose" : "border-white/20 focus:border-gold"
+                )}
+              />
+              {error && <p className="absolute top-full mt-1 text-[8px] text-rose uppercase tracking-widest">{error}</p>}
+              <button 
+                type="submit"
+                disabled={subscribed}
+                className="absolute right-0 bottom-4 text-gold hover:text-bone transition-colors disabled:opacity-0"
+              >
+                JOIN
+              </button>
+            </form>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <span className="font-mono text-[8px] uppercase tracking-widest text-bone/30">© 2026 Aura Plasters Studio. All Rights Reserved.</span>
+          <div className="flex gap-8 font-mono text-[8px] uppercase tracking-widest text-bone/30">
+            <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </footer>
+
