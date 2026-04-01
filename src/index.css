@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #0A0A08;
+  --color-gold: #D4AF37;
+  --color-platinum: #E5E4E2;
+  --color-bone: #F4F4F1;
+  
+  /* New Vibrant Mineral Pigments */
+  --color-emerald: #064E3B;
+  --color-terracotta: #92400E;
+  --color-lapis: #1E3A8A;
+  --color-rose: #831843;
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian text-bone font-sans antialiased selection:bg-gold selection:text-obsidian overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-gold via-terracotta to-emerald;
+  }
+
+  .cursor-glow {
+    @apply fixed pointer-events-none w-96 h-96 rounded-full opacity-30 blur-[100px] z-50 transition-transform duration-75 ease-out;
+    background: radial-gradient(circle, var(--color-gold) 0%, var(--color-emerald) 40%, transparent 70%);
+  }
+
+  .pigment-cloud {
+    @apply absolute -z-10 w-[800px] h-[800px] rounded-full blur-[180px] opacity-20 pointer-events-none;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-obsidian;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold/30 rounded-full hover:bg-gold/50 transition-colors;
+}
